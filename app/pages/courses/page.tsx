@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Navbar from '../../comp/navbar';
+import Chatbot from '../../comp/chatbot';
 
 const courses = [
   { id: '1', title: 'Introduction to AI', description: 'Learn the basics of AI and ML.', price: 'CA$109.99' },
@@ -25,6 +26,8 @@ export default function CoursesPage() {
           </Link>
         ))}
       </div>
+
+      <Chatbot />
     </main>
   );
 }
