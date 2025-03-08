@@ -1,5 +1,7 @@
 # YULearn - AI-Powered Learning Platform for CS and SWE Students
 
+![YuLearn](./public/yulearn.png)
+
 ## Overview
 **YULearn** is an AI-powered platform designed to bridge the gap between academia and industry expectations for CS and SWE students. It provides personalized, industry-relevant content to help students prepare for real-world roles, focusing on practical skills missing in traditional coursework.
 
