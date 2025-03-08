@@ -7,20 +7,21 @@ const UserId = () => {
   return (
     <main className="h-screen w-screen overflow-hidden">
       {/* Navbar */}
-      <nav className="absolute top-0 left-0 w-full flex items-center justify-between bg-white/50 backdrop-blur-md shadow-md p-4">
-        {/* Logo on the Left */}
+      <nav className="absolute top-0 left-0 w-full flex items-center justify-between bg-red-600 backdrop-blur-md shadow-md p-4">
         <div className="ml-5">
-          <img src="/YuLearn.svg" alt="YuLearn Logo" className="h-10 w-auto" />
+          <Link href="/pages/dashboard">
+            <img src="/YuLearn White.svg" alt="YuLearn Logo" className="h-10 w-auto" />
+          </Link>
         </div>
 
         {/* Navigation Links + UserButton on the Right */}
         <div className="flex items-center space-x-6 mr-5">
-        <Link href="/pages/about" className="text-lg font-medium cursor-pointer hover:text-gray-600 transition">
-          About
-        </Link>
-          <Link href="/pages/courses" className="text-lg font-medium cursor-pointer hover:text-gray-600 transition">
-          Courses
-        </Link>
+          <Link href="/pages/about" className="text-lg font-medium cursor-pointer hover:text-gray-600 text-white transition">
+            About
+          </Link>
+          <Link href="/pages/courses" className="text-lg font-medium cursor-pointer hover:text-gray-600 text-white transition">
+            Courses
+          </Link>
           <UserButton />
         </div>
       </nav>
@@ -28,7 +29,6 @@ const UserId = () => {
       {/* Main Content */}
       <div className="flex h-full w-full items-center justify-center">
         <User />
-
       </div>
 
       {/* Footer */}
