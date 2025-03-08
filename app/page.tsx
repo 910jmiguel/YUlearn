@@ -30,6 +30,8 @@ export default function Home() {
 
         <User />
       </div>
+
+      
     </main>
   );
 }
