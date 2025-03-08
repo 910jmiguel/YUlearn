@@ -1,6 +1,7 @@
 'use client';
 import { useParams } from 'next/navigation';
 import Navbar from '@/app/comp/navbar';
+import Chatbot from '@/app/comp/chatbot';
 
 const courses: Record<
   string,
@@ -132,6 +133,8 @@ export default function CoursePage() {
             </section>
           </div>
         </div>
+
+        <Chatbot />
       </main>
 
       {/* Footer */}
