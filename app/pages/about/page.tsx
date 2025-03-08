@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from "@/app/comp/navbar";
+import Chatbot from "@/app/comp/chatbot";
 
 const Page = () => {
   return (
@@ -13,6 +14,8 @@ const Page = () => {
         <p className="text-lg text-center mt-5 max-w-3xl mx-auto">
           YuLearn is an online learning platform that offers a wide range of courses in various fields. Our mission is to provide affordable, high-quality education to everyone.
         </p>
+
+        <Chatbot />
       </main>
 
       {/* Footer */}
