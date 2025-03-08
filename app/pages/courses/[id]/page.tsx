@@ -54,14 +54,17 @@ export default function CoursePage() {
 
 
         {/* Hero Section */}
-        <div className="relative bg-gray-900 text-white p-6 rounded-xl">
-          <h1 className="text-4xl font-bold">{course.title}</h1>
-          <p className="text-gray-300 text-lg">{course.languages.join(', ')}</p>
-          <div className="absolute top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-lg">
+        <div className="bg-gray-900 text-white p-6 rounded-xl flex flex-col md:flex-row md:justify-between items-center">
+          <div>
+            <h1 className="text-4xl font-bold">{course.title}</h1>
+            <p className="text-gray-300 text-lg">{course.languages.join(', ')}</p>
+          </div>
+          <div className="bg-red-500 text-white px-4 py-2 rounded-lg ml-2 mt-4 md:mt-0">
             <p>{course.duration}</p>
             <p className="text-sm">{course.level} level required</p>
           </div>
         </div>
+
 
         {/* Compatibility & Enrollment */}
         <div className="bg-white shadow-md p-4 rounded-lg flex items-center">
@@ -70,7 +73,7 @@ export default function CoursePage() {
           </div>
           <div className="ml-4">
             <p className="font-bold">Great for:</p>
-            <p className="text-gray-600">Interested in working at front-end, back-end, machine learning</p>
+            <p className="text-gray-600">Interested in Git and GitHub, web development, and machine learning</p>
           </div>
           <button className="ml-auto bg-red-500 text-white px-6 py-2 rounded-lg">Enroll</button>
         </div>
