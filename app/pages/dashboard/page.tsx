@@ -2,6 +2,7 @@ import React from 'react'
 import { UserButton } from '@clerk/nextjs'
 import User from '../../comp/userhandle'
 import Link from 'next/link'
+import Chatbot from '../../comp/chatbot'
 
 const UserId = () => {
   return (
@@ -30,6 +31,9 @@ const UserId = () => {
       <div className="flex h-full w-full items-center justify-center">
         <User />
       </div>
+
+      {/* Chatbot */}
+      <Chatbot />
 
       {/* Footer */}
       <footer className="text-end p-4 w-full">
