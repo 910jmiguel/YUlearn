@@ -1,7 +1,7 @@
 import pandas as pd
 import plotly.graph_objects as go
 
-yorkData = pd.read_csv("data/YorkData.csv")
+yorkData = pd.read_csv("docs/YorkData.csv")
 yorkData.columns = yorkData.columns.str.strip()
 yorkData = yorkData.T
 yorkData.columns = yorkData.iloc[0]
@@ -23,7 +23,7 @@ for category in yorkData_long["Category"].unique():
 
 fig.update_layout(
     barmode="stack",
-    title="Stacked Bar Chart of York Enrollment Data by Year (source: https://www.yorku.ca/oipa/quick-facts/undergraduate-student-headcount/)",
+    title="Stacked Bar Chart of York Enrollment Data by Year (source: https://www.yorku.ca/oipa/quick-facts/undergraduate-student-headcount)",
     xaxis_title="Year",
     yaxis_title="Student population",
     font=dict(
