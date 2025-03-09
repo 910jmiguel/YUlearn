@@ -26,11 +26,15 @@ const Hero = () => {
 
   return (
     <div className="fixed bottom-4 right-4 bg-white text-black shadow-lg rounded-lg w-64">
-      <div className="bg-red-600 text-white px-3 py-1 rounded-t-lg cursor-pointer"
-        onClick={() => setIsMinimized(!isMinimized)}>
-        <h1 className="text-sm font-semibold">
-          {isMinimized ? "Chat (Click to Expand)" : "YuLearn Support"}
-        </h1>
+      <div
+        className="bg-red-600 text-white px-3 py-1 rounded-t-lg cursor-pointer flex items-start justify-start"
+        onClick={() => setIsMinimized(!isMinimized)}
+      >
+        <img
+          src="/YU AI White 1.svg"
+          alt="Chat Icon"
+          className="h-5 w-5"
+        />
       </div>
 
       {!isMinimized && (
@@ -56,7 +60,8 @@ const Hero = () => {
             />
             <button
               onClick={handleSendMessage}
-              className="px-3 py-1 bg-red-600 text-white rounded-lg hover:bg-red-600/40 transition text-sm">
+              className="px-3 py-1 bg-red-600 text-white rounded-lg hover:bg-red-600/40 transition text-sm"
+            >
               Send
             </button>
           </div>
