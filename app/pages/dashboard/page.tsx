@@ -3,6 +3,12 @@ import { UserButton } from "@clerk/nextjs";
 import User from "../../comp/userhandle";
 import Link from "next/link";
 
+const courses = [
+  { id: "1", img: "/course3.webp", title: "Introduction to Git and GitHub", level: "Beginner" },
+  { id: "2", img: "/course1.webp", title: "Introduction to Coding (Python)", level: "Intermediate" },
+  { id: "3", img: "/course2.webp", title: "Introduction to Frontend", level: "Beginner" },
+];
+
 const UserId = () => {
   return (
     <main className="h-screen w-screen overflow-hidden bg-gray-100 flex flex-col">
@@ -44,12 +50,8 @@ const UserId = () => {
       <section className="px-10 py-6 flex-grow">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {/* Course Cards */}
-          {[
-            { img: "/course3.webp", title: "Introduction to Git and GitHub", level: "Beginner" },
-            { img: "/course1.webp", title: "Introduction to Coding (Python)", level: "Intermediate" },
-            { img: "/course2.webp", title: "Introduction to Frontend", level: "Beginner" },
-          ].map((course, index) => (
-            <Link key={index} href="/pages/courses" passHref>
+          {courses.map((course) => (
+            <Link key={course.id} href={`/pages/courses/${course.id}`} passHref>
               <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer hover:scale-105 transform transition-all duration-300 hover:shadow-xl w-full">
                 <div className="w-full h-40">
                   <img src={course.img} alt={course.title} className="w-full h-full object-cover" />
@@ -63,8 +65,6 @@ const UserId = () => {
           ))}
         </div>
       </section>
-
-
 
       {/* Footer - Now in Bottom Right */}
       <footer className="absolute bottom-0 right-0 p-2">
