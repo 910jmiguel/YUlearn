@@ -14,7 +14,7 @@ const Hero = () => {
     setMessages([...messages, userMessage]);
 
     try {
-      const response = await axios.post("/api/cohere-chat", { message: input }); // ✅ Correct API path
+      const response = await axios.post("/api/cohere-chat", { message: input });
       const aiMessage = { role: "ai", content: response.data.content };
       setMessages((prevMessages) => [...prevMessages, aiMessage]);
     } catch (error) {
