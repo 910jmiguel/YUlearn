@@ -5,7 +5,7 @@ import axios from "axios";
 const Hero = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
-  const [isMinimized, setIsMinimized] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(true); // Start minimized
 
   const handleSendMessage = async () => {
     if (input.trim() === "") return;
