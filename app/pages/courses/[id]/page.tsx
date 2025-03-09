@@ -8,11 +8,11 @@ export default function CoursePage() {
   const params = useParams();
   const id = Array.isArray(params.id) ? params.id[0] : params.id;
 
-  if (!id || !courses[id]) {
+  if (!id || !(id in courses)) {
     return <h1 className="text-center text-red-500 mt-10">Course not found</h1>;
   }
 
-  const course = courses[id];
+  const course = courses[id as keyof typeof courses];
 
   return (
     <div className="flex flex-col min-h-screen">
