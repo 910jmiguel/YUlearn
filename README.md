@@ -22,4 +22,6 @@ Many students at York University and beyond struggle with industry-level concept
 - **Neon PostgreSQL** for scalable cloud storage.
 - **Drizzle ORM** for type-safe database interaction.
 - **Clerk** for authentication and user management.
+### Other
+- **Python**, **Pandas**, and **Plotly** to render out graph data about York University statistics for business pitch 
 
