@@ -11,8 +11,6 @@ const Page = () => {
       {/* Main Content */}
       <main className="flex-grow">
         <img src="/yulearncourses.png" alt="YuLearn Logo" className=" w-auto mx-auto mt-10"></img>
-
-        <Chatbot />
       </main>
 
       {/* Footer */}
