@@ -1,33 +1,76 @@
-import Link from 'next/link';
-import Navbar from '../../comp/navbar';
-import Chatbot from '../../comp/chatbot';
+import React from "react";
+import { UserButton } from "@clerk/nextjs";
+import Link from "next/link";
+import Chatbot from "@/app/comp/chatbot";
 
-const courses = [
-  { id: '1', title: 'Introduction to AI', description: 'Learn the basics of AI and ML.', price: 'CA$109.99' },
-  { id: '2', title: 'Web Development', description: 'Master HTML, CSS, and JavaScript.', price: 'CA$84.99' },
-  { id: '3', title: 'Data Science 101', description: 'Explore data analysis and visualization.', price: 'CA$24.99' }
-];
+const CoursesPage = () => {
+  const courses = [
+    { img: "/course3.webp", title: "Introduction to Git and GitHub", level: "Beginner" },
+    { img: "/course1.webp", title: "Introduction to Coding (Python)", level: "Intermediate" },
+    { img: "/course2.webp", title: "Frontend Development Basics", level: "Beginner" },
+    { img: "/course4.webp", title: "Advanced React.js", level: "Advanced" },
+    { img: "/course5.webp", title: "Database Management with PostgreSQL", level: "Intermediate" },
+    { img: "/course6.webp", title: "Backend Development with Node.js", level: "Advanced" },
+    { img: "/course7.webp", title: "Cybersecurity Fundamentals", level: "Beginner" },
+    { img: "/course8.webp", title: "Machine Learning with Python", level: "Intermediate" },
+  ];
 
-export default function CoursesPage() {
   return (
-    <main className="p-10 pt-20"> {/* Added pt-20 to prevent navbar overlap */}
-      <div>
-        <Navbar />
-      </div>
-      <h1 className="text-3xl font-bold mt-5 mb-6 text-center">Available Courses</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {courses.map(course => (
-          <Link key={course.id} href={`/pages/courses/${course.id}`}>
-            <div className="bg-white shadow-lg rounded-lg p-4 cursor-pointer transition-transform transform hover:scale-105">
-              <h2 className="text-xl font-semibold">{course.title}</h2>
-              <p className="text-gray-600">{course.description}</p>
-              
-            </div>
+    <main className="h-screen w-screen overflow-hidden bg-gray-100 flex flex-col">
+      {/* Navbar */}
+      <nav className="w-full flex items-center justify-between bg-red-600 shadow-md p-4 fixed top-0 z-10">
+        <div className="ml-5">
+          <Link href="/pages/dashboard">
+            <img src="/YuLearn White.svg" alt="YuLearn Logo" className="h-10 w-auto" />
           </Link>
-        ))}
+        </div>
+        <div className="flex items-center space-x-6 mr-5">
+          <Link href="/pages/about" className="text-lg font-medium text-white hover:text-gray-300 transition">
+            About
+          </Link>
+          <Link href="/pages/courses" className="text-lg font-medium text-white hover:text-gray-300 transition">
+            Courses
+          </Link>
+          <UserButton />
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="mt-16 flex flex-col items-center justify-center bg-red-500 py-8">
+        <h1 className="text-5xl font-bold text-white">Explore Our Courses</h1>
+        <p className="text-lg text-white mt-2">Learn new skills and advance your career</p>
+      </section>
+
+      {/* Course Listings */}
+      <section className="px-10 py-8 flex-grow overflow-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {courses.map((course, index) => (
+            <Link key={index} href={`/pages/courses/${index + 1}`} className="block">
+              <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition hover:scale-105">
+                <div className="w-full h-40">
+                  <img src={course.img} alt={course.title} className="w-full h-full object-cover" />
+                </div>
+                <div className="p-4 text-center">
+                  <h2 className="font-semibold text-lg">{course.title}</h2>
+                  <p className="text-gray-500 text-sm mt-1">{course.level}</p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Chatbot */}
+      <div className="fixed bottom-5 right-5">
+        <Chatbot />
       </div>
 
-      <Chatbot />
+      {/* Footer */}
+      <footer className="w-full p-4 text-start bg-gray-200">
+        <p className="text-sm text-gray-600">© {new Date().getFullYear()} YuLearn. All rights reserved.</p>
+      </footer>
     </main>
   );
-}
+};
+
+export default CoursesPage;
