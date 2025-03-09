@@ -1,3 +1,4 @@
+//app\pages\courses\page.tsx
 import React from "react";
 import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
@@ -46,7 +47,7 @@ const CoursesPage = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {courses.map((course, index) => (
             <Link key={index} href={`/pages/courses/${index + 1}`} className="block">
-              <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition hover:scale-105">
+              <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition hover:scale-105 w-full">
                 <div className="w-full h-40">
                   <img src={course.img} alt={course.title} className="w-full h-full object-cover" />
                 </div>
