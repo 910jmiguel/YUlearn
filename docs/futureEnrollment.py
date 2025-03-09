@@ -114,4 +114,4 @@ for target, pred in zip(target_columns, predictions):
     )
 
 fig.show()
-fig.write_image("enrollmentLassonde.pdf", scale=2)
+fig.write_image("docs/enrollmentLassonde.pdf", scale=2)

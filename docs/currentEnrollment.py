@@ -33,4 +33,4 @@ fig.update_layout(
 
 fig.show()
 
-fig.write_image("stacked_bar_chart.pdf", scale=2)
+fig.write_image("docs/currentEnrollment.pdf", scale=2)
