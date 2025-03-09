@@ -2,38 +2,7 @@
 import { useParams } from 'next/navigation';
 import Navbar from '@/app/comp/navbar';
 import Chatbot from '@/app/comp/chatbot';
-
-const courses: Record<
-  string,
-  {
-    title: string;
-    description: string;
-    price: string;
-    duration: string;
-    level: string;
-    languages: string[];
-    compatibility: number;
-    learn: string[];
-    prerequisites: string[];
-    reviews: { text: string; date: string }[];
-  }
-> = {
-  '1': {
-    title: 'Introduction To Git And GitHub',
-    description: 'Learn about front-end, back-end, and machine learning.',
-    price: 'CA$109.99',
-    duration: '2 weeks',
-    level: 'Beginner',
-    languages: ['Git', 'GitHub'],
-    compatibility: 93,
-    learn: ['Git and GitHub', 'Version control', 'Collaboration'],
-    prerequisites: ['Basic computer skills', 'Github account'],
-    reviews: [
-      { text: 'This course helped me understand Big O optimization and GitHub.', date: 'Fall 2024' },
-      { text: 'This course helped me understand binary search trees!', date: 'Winter 2025' }
-    ]
-  }
-};
+import { courses } from '@/app/data/courses';
 
 export default function CoursePage() {
   const params = useParams();
@@ -47,13 +16,9 @@ export default function CoursePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Navbar */}
       <Navbar />
 
-      {/* Main Content */}
       <main className="flex-grow max-w-5xl mx-auto px-6 py-20 space-y-6">
-
-
         {/* Hero Section */}
         <div className="bg-gray-900 text-white p-6 rounded-xl flex flex-col md:flex-row md:justify-between items-center">
           <div>
@@ -66,7 +31,6 @@ export default function CoursePage() {
           </div>
         </div>
 
-
         {/* Compatibility & Enrollment */}
         <div className="bg-white shadow-md p-4 rounded-lg flex items-center">
           <div className="w-16 h-16 bg-green-500 text-white flex items-center justify-center rounded-full text-xl">
@@ -74,7 +38,7 @@ export default function CoursePage() {
           </div>
           <div className="ml-4">
             <p className="font-bold">Great for:</p>
-            <p className="text-gray-600">Interested in Git and GitHub, web development, and machine learning</p>
+            <p className="text-gray-600">Interested in {course.languages.join(', ')}</p>
           </div>
           <button className="ml-auto bg-red-500 text-white px-6 py-2 rounded-lg">Enroll</button>
         </div>
@@ -93,13 +57,11 @@ export default function CoursePage() {
 
           {/* Main Content */}
           <div className="col-span-3 space-y-8">
-            {/* Introduction */}
             <section id="introduction">
               <h2 className="text-2xl font-bold">Introduction</h2>
               <p className="text-gray-600">{course.description}</p>
             </section>
 
-            {/* Reviews */}
             <section id="reviews">
               <h2 className="text-2xl font-bold">What others say</h2>
               {course.reviews.map((review, index) => (
@@ -110,7 +72,6 @@ export default function CoursePage() {
               ))}
             </section>
 
-            {/* What You Will Learn */}
             <section id="learn">
               <h2 className="text-2xl font-bold">What you will learn</h2>
               <div className="flex flex-wrap gap-2">
@@ -122,7 +83,6 @@ export default function CoursePage() {
               </div>
             </section>
 
-            {/* What You Need */}
             <section id="prerequisites">
               <h2 className="text-2xl font-bold">What you need</h2>
               <ul className="space-y-2">
@@ -137,11 +97,8 @@ export default function CoursePage() {
         <Chatbot />
       </main>
 
-      {/* Footer */}
       <footer className="p-4 w-full text-end bg-gray-50 border-t">
-        <p className="text-sm text-gray-600">
-          © {new Date().getFullYear()} YuLearn. All rights reserved.
-        </p>
+        <p className="text-sm text-gray-600">© {new Date().getFullYear()} YuLearn. All rights reserved.</p>
       </footer>
     </div>
   );
