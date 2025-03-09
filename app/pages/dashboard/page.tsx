@@ -2,7 +2,6 @@ import React from "react";
 import { UserButton } from "@clerk/nextjs";
 import User from "../../comp/userhandle";
 import Link from "next/link";
-import Chatbot from "../../comp/chatbot";
 
 const UserId = () => {
   return (
@@ -50,20 +49,22 @@ const UserId = () => {
             { img: "/course1.webp", title: "Introduction to Coding (Python)", level: "Intermediate" },
             { img: "/course2.webp", title: "Introduction to Frontend", level: "Beginner" },
           ].map((course, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-              <div className="w-full h-40">
-                <img src={course.img} alt={course.title} className="w-full h-full object-cover" />
+            <Link key={index} href="/pages/courses" passHref>
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer hover:scale-105 transform transition-all duration-300 hover:shadow-xl w-full">
+                <div className="w-full h-40">
+                  <img src={course.img} alt={course.title} className="w-full h-full object-cover" />
+                </div>
+                <div className="p-5 flex-grow text-center">
+                  <h2 className="font-semibold text-lg">{course.title}</h2>
+                  <p className="text-gray-500 text-sm mt-1">{course.level}</p>
+                </div>
               </div>
-              <div className="p-5 text-center">
-                <h2 className="font-semibold text-lg">{course.title}</h2>
-                <p className="text-gray-500 text-sm mt-1">{course.level}</p>
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
 
-      
+
 
       {/* Footer - Now in Bottom Right */}
       <footer className="absolute bottom-0 right-0 p-2">
