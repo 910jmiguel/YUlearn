@@ -14,8 +14,8 @@ const Page = () => {
       </main>
 
       {/* Footer */}
-      <footer className="p-4 w-full text-start bg-red-600">
-        <p className="text-sm text-gray-600">
+      <footer className="p-4 w-full text-end bg-red-600">
+        <p className="text-sm text-white">
           © {new Date().getFullYear()} YuLearn. All rights reserved.
         </p>
       </footer>
